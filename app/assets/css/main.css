@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* Дизайн-токены: цвета, шрифт, скругления. Меняются здесь — меняются везде. */
+@theme {
+  --font-sans: "Onest", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg: #f1f2f4;
+  --color-card: #ffffff;
+  --color-ink: #111318;
+  --color-muted: #6e7380;
+  --color-line: #e6e7ea;
+  --color-accent: #4f46e5;
+  --color-accent-soft: #eef0ff;
+  --color-ok: #16a34a;
+
+  --radius-card: 24px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+  }
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-card rounded-card relative overflow-hidden p-7;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-[14.5px] font-semibold text-white transition-colors hover:bg-accent;
+  }
+  .btn-light {
+    @apply bg-bg text-ink hover:bg-line;
+  }
+  .tag {
+    @apply rounded-full bg-bg px-3 py-1.5 text-[13px] font-medium;
+  }
+  .label {
+    @apply text-[13px] font-medium text-muted;
+  }
+}
